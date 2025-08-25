@@ -17,18 +17,33 @@
             <li class="item">Magnam eaque vitae fuga necessitatibus!</li>
             <li class="item">Illum maiores fuga ratione non.</li>
         </ul>
+        <button id="btn-add-item">Add Item</button>
     </section>
 
     <script>
-        const items =document.getElementsByClassName('item');
-        // console.log(items)
-        for(const item of items){
-            item.addEventListener('click',function(event){
-                // console.log(event.target.parentNode)
-                event.target.parentNode.removeChild(event.target)
-            })
+      
 
-        }
+        document.getElementById('list-container').addEventListener('click',function(event){
+            console.log(event.target)
+             event.target.parentNode.removeChild(event.target)
+        })
+
+        // const items =document.getElementsByClassName('item');
+        // // console.log(items)
+        // for(const item of items){
+        //     item.addEventListener('click',function(event){
+        //         // console.log(event.target.parentNode)
+        //         event.target.parentNode.removeChild(event.target)
+        //     })
+
+        // }
+          document.getElementById('btn-add-item').addEventListener('click',function(){
+            const listContainer =document.getElementById('list-container');
+            const li =document.createElement('li');
+            li.innerText='brand new item added';
+            li.classList.add('item')
+            listContainer.appendChild(li)
+        })
     </script>
 
 </body>
